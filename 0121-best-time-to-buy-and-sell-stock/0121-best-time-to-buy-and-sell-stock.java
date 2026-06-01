@@ -11,13 +11,12 @@ class Solution {
 
             else{
                 int profit = prices[i] - minprice;
-                
+
                 if(profit > maxprofit){
                     maxprofit = profit;
                 }
             }
         }
-
         return maxprofit;
     }
 }
