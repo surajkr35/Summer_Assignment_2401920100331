@@ -9,7 +9,7 @@ class Solution {
                 minprice = prices[i];
             }
 
-            else {
+            else{
                 int profit = prices[i] - minprice;
 
                 if(profit > maxprofit){
