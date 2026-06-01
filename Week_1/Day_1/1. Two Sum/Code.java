@@ -1,23 +1,20 @@
 class Solution {
-    public int maxProfit(int[] prices) {
-        int n = prices.length;
-        int minprice = prices[0];
-        int maxprofit = 0;
+    public int[] twoSum(int[] nums, int target) {
+        int n = nums.length;
+        int[] ans = new int[2];
 
-        for(int i=1; i<n; i++){
-            if(prices[i] < minprice){
-                minprice = prices[i];
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for(int i = 0; i < n; i++){
+            int nums2 = target - nums[i];
+
+            if(map.containsKey(nums2)){
+                return new int[]{i, map.get(nums2)};
             }
-
-            else{
-                int profit = prices[i] - minprice;
-
-                if(profit > maxprofit){
-                    maxprofit = profit;
-                }
-            }
+            map.put(nums[i], i);
         }
+
         
-        return maxprofit;
+        return ans;
     }
 }
